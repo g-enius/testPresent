@@ -15,22 +15,28 @@
 {
     [super viewDidLoad];
     NSLog(@"presentedVC  1 viewDidLoad");
-
-    self.view.backgroundColor = [UIColor clearColor];
-    self.view.opaque = NO;
-
-    UIView *maskView = [[UIView alloc]initWithFrame:CGRectMake(100, 200, 300, 400)];
-    maskView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.3];
-    [self.view addSubview:maskView];
+    
+    self.view.backgroundColor = [UIColor purpleColor];
     
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(present)];
-    [maskView addGestureRecognizer: tap];
+    [self.view addGestureRecognizer: tap];
+}
+
+-(void)viewDidLayoutSubviews
+{
+    [super viewDidLayoutSubviews];
+    self.view.frame = CGRectMake(50, 120, 300, 550);
 }
 
 - (void)present
 {
     PresentedVC2 *vc2 = [[PresentedVC2 alloc]init];
+    
+#ifdef TRANSPARENT
     [self.presentingViewController.navigationController presentViewController:vc2 animated:YES completion:nil];
+#else
+    [self presentViewController:vc2 animated:YES completion:nil];
+#endif
 }
 
 - (void)dealloc
@@ -48,6 +54,9 @@
 {
     [super viewDidAppear:animated];
     NSLog(@"presentedVC  1 viewDidAppear");
+    NSLog(@"self = %@, self.presentingViewController = %@, self.presentingViewController.navigationController = %@",
+          self, self.presentingViewController, self.presentingViewController.navigationController);
+
 }
 
 - (void)viewWillDisappear:(BOOL)animated

@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+//#define TRANSPARENT
+
 @interface PresentedVC1 : UIViewController
 
 @end

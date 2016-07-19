@@ -15,6 +15,7 @@
     [super viewDidLoad];
     NSLog(@"presentingVC viewDidLoad");
     
+    self.title = @"presentingVC";
     self.view.backgroundColor =[UIColor redColor];
     
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(presentVC)];
@@ -54,6 +55,7 @@
 {
     PushedVC *vc = [[PushedVC alloc]init];
     [self.navigationController pushViewController:vc animated:YES];
+    NSLog(@"self = %@, self.navigationController = %@", self, self.navigationController);
 }
 
 @end
