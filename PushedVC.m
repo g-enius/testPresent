@@ -1,19 +1,19 @@
 //
-//  ViewController.m
+//  PushedVC.m
 //  testPresent
 //
-//  Created by Charles on 7/16/16.
+//  Created by Charles on 7/19/16.
 //  Copyright © 2016 Charles. All rights reserved.
 //
 
-#import "ViewController.h"
 #import "PushedVC.h"
+#import "PresentedVC1.h"
 
-@implementation ViewController
+@implementation PushedVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSLog(@"presentingVC viewDidLoad");
+    NSLog(@"PushedVC viewDidLoad");
     
     self.view.backgroundColor =[UIColor redColor];
     
@@ -23,37 +23,40 @@
 
 - (void)dealloc
 {
-    NSLog(@"presentingVC dealloc");
+    NSLog(@"PushedVC dealloc");
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    NSLog(@"++++++++presentingVC viewWillAppear");
+    NSLog(@"++++++++PushedVC viewWillAppear");
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    NSLog(@"presentingVC viewDidAppear");
+    NSLog(@"PushedVC viewDidAppear");
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-    NSLog(@"presentingVC viewWillDisappear");
+    NSLog(@"PushedVC viewWillDisappear");
 }
 
 - (void)viewDidDisappear:(BOOL)animated
 {
     [super viewDidDisappear:animated];
-    NSLog(@"presentingVC viewDidDisappear");
+    NSLog(@"PushedVC viewDidDisappear");
 }
 
 - (void) presentVC
 {
-    PushedVC *vc = [[PushedVC alloc]init];
-    [self.navigationController pushViewController:vc animated:YES];
+    PresentedVC1 *vc = [[PresentedVC1 alloc]init];
+    self.definesPresentationContext = YES;
+    vc.modalPresentationStyle = UIModalPresentationOverCurrentContext;
+    vc.providesPresentationContextTransitionStyle = YES;
+    [self presentViewController:vc animated:YES completion:nil];
 }
 
 @end
