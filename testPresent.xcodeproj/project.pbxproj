@@ -18,6 +18,7 @@
 		562E23161D3A2939007752B8 /* PresentedVC1.m in Sources */ = {isa = PBXBuildFile; fileRef = 562E23151D3A2939007752B8 /* PresentedVC1.m */; };
 		566BAEF31D3D2128001B4FA1 /* PresentedVC2.m in Sources */ = {isa = PBXBuildFile; fileRef = 566BAEF21D3D2128001B4FA1 /* PresentedVC2.m */; };
 		566BAEF91D3DCCFC001B4FA1 /* PushedVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 566BAEF81D3DCCFC001B4FA1 /* PushedVC.m */; };
+		566BAEFC1D3DD2E2001B4FA1 /* ChildVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 566BAEFB1D3DD2E2001B4FA1 /* ChildVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,8 @@
 		566BAEF21D3D2128001B4FA1 /* PresentedVC2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PresentedVC2.m; sourceTree = "<group>"; };
 		566BAEF71D3DCCFC001B4FA1 /* PushedVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PushedVC.h; path = ../PushedVC.h; sourceTree = "<group>"; };
 		566BAEF81D3DCCFC001B4FA1 /* PushedVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PushedVC.m; path = ../PushedVC.m; sourceTree = "<group>"; };
+		566BAEFA1D3DD2E2001B4FA1 /* ChildVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChildVC.h; sourceTree = "<group>"; };
+		566BAEFB1D3DD2E2001B4FA1 /* ChildVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChildVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +119,8 @@
 				562E22E81D3A28FB007752B8 /* ViewController.m */,
 				566BAEF71D3DCCFC001B4FA1 /* PushedVC.h */,
 				566BAEF81D3DCCFC001B4FA1 /* PushedVC.m */,
+				566BAEFA1D3DD2E2001B4FA1 /* ChildVC.h */,
+				566BAEFB1D3DD2E2001B4FA1 /* ChildVC.m */,
 				562E23141D3A2939007752B8 /* PresentedVC1.h */,
 				562E23151D3A2939007752B8 /* PresentedVC1.m */,
 				566BAEF11D3D2128001B4FA1 /* PresentedVC2.h */,
@@ -287,6 +292,7 @@
 			files = (
 				562E23161D3A2939007752B8 /* PresentedVC1.m in Sources */,
 				562E22E91D3A28FB007752B8 /* ViewController.m in Sources */,
+				566BAEFC1D3DD2E2001B4FA1 /* ChildVC.m in Sources */,
 				562E22E61D3A28FA007752B8 /* AppDelegate.m in Sources */,
 				566BAEF91D3DCCFC001B4FA1 /* PushedVC.m in Sources */,
 				562E22E31D3A28FA007752B8 /* main.m in Sources */,

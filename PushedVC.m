@@ -7,18 +7,19 @@
 //
 
 #import "PushedVC.h"
-#import "PresentedVC1.h"
+#import "ChildVC.h"
 
 @implementation PushedVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     NSLog(@"PushedVC viewDidLoad");
-    
-    self.view.backgroundColor =[UIColor redColor];
+
+    self.title = @"PushedVC";
+    self.view.backgroundColor = [UIColor blueColor];
     
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(presentVC)];
-    [self.view addGestureRecognizer: tap];
+    [self.view addGestureRecognizer:tap];
 }
 
 - (void)dealloc
@@ -36,6 +37,7 @@
 {
     [super viewDidAppear:animated];
     NSLog(@"PushedVC viewDidAppear");
+    NSLog(@"self = %@, self.navigationController = %@", self, self.navigationController);
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -52,11 +54,11 @@
 
 - (void) presentVC
 {
-    PresentedVC1 *vc = [[PresentedVC1 alloc]init];
-    self.definesPresentationContext = YES;
-    vc.modalPresentationStyle = UIModalPresentationOverCurrentContext;
-    vc.providesPresentationContextTransitionStyle = YES;
-    [self presentViewController:vc animated:YES completion:nil];
+    ChildVC *vc = [[ChildVC alloc]init];
+    [self addChildViewController:vc];
+    vc.view.frame = CGRectMake(30, 100, 350, 600);
+    [self.view addSubview:vc.view];
+    [vc didMoveToParentViewController:self];
 }
 
 @end

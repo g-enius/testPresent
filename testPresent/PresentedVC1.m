@@ -32,11 +32,13 @@
 {
     PresentedVC2 *vc2 = [[PresentedVC2 alloc]init];
     
-#ifdef TRANSPARENT
-    [self.presentingViewController.navigationController presentViewController:vc2 animated:YES completion:nil];
-#else
     [self presentViewController:vc2 animated:YES completion:nil];
-#endif
+   
+    /**
+     * 透明下 等同于 [self.presentingViewController.navigationController presentViewController:vc2 animated:YES completion:nil];
+     
+    The object on which you call this method may not always be the one that handles the presentation. Each presentation style has different rules governing its behavior. For example, a full-screen presentation must be made by a view controller that itself covers the entire screen. If the current view controller is unable to fulfill a request, it forwards the request up the view controller hierarchy to its nearest parent, which can then handle or forward the request.
+     */
 }
 
 - (void)dealloc

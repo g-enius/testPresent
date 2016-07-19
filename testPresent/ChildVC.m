@@ -61,6 +61,8 @@
 #endif
     
     [self presentViewController:vc animated:YES completion:nil];
+    //透明就真的 childVC present PresentedVC1
+    //不透明 系统会找到 childVC的 navigationController 去 present PresentedVC1
 
 }
 
